@@ -15,5 +15,7 @@ namespace tk848615_MIS4200.Models
 
         public DateTime customerSince { get; set; }
 
+        public ICollection<Orders> Orders { get; set; }
+
     }
 }
