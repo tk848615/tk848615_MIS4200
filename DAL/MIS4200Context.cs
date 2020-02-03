@@ -15,7 +15,11 @@ namespace tk848615_MIS4200.DAL
             // the base attribute says which connection string to use
         }
         public DbSet<Orders> Orders { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
         public DbSet<customer> Customers { get; set; }
 
+        public System.Data.Entity.DbSet<tk848615_MIS4200.Models.Product> Products { get; set; }
     }
 }

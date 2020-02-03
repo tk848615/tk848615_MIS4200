@@ -17,5 +17,13 @@ namespace tk848615_MIS4200.Models
 
         public ICollection<Orders> Orders { get; set; }
 
+        public string fullName { 
+           get 
+            {
+                return customerLastName + ", " + customerFirstName;
+            }
+                
+                }
+
     }
 }
