@@ -21,7 +21,7 @@ namespace tk848615_MIS4200.Models
         {
             get
             {
-                return flyerFirstName + ", " + flyerFirstName;
+                return flyerLastName + ", " + flyerFirstName;
             }
 
         }

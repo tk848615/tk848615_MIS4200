@@ -15,6 +15,15 @@ namespace tk848615_MIS4200.Models
         public string airplaneType { get; set; }
         public DateTime dateBuilt { get; set; }
 
+        public string airplaneName
+        {
+            get
+            {
+                return airplaneManufacturer + ", " + airplaneType;
+            }
+
+        }
+
         public ICollection<flights> Flights { get; set; }
 
 

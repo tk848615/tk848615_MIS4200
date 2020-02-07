@@ -40,8 +40,8 @@ namespace tk848615_MIS4200.Controllers
         // GET: flights/Create
         public ActionResult Create()
         {
-            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer");
-            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName");
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneName");
+            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "fullname");
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace tk848615_MIS4200.Controllers
             }
 
             ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
-            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName", flights.flyerID);
+            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "FullName", flights.flyerID);
             return View(flights);
         }
 
@@ -77,7 +77,7 @@ namespace tk848615_MIS4200.Controllers
                 return HttpNotFound();
             }
             ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
-            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName", flights.flyerID);
+            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "FullName", flights.flyerID);
             return View(flights);
         }
 
