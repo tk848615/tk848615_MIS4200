@@ -22,6 +22,12 @@ namespace tk848615_MIS4200.DAL
 
         public DbSet<customer> Customers { get; set; }
 
+
+       
+        public DbSet<flyers> Flyers { get; set; }
+       public DbSet<flights> Flights { get; set; }
+        public DbSet<airplanes> airplanes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();

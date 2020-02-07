@@ -1,0 +1,42 @@
+﻿@model tk848615_MIS4200.Models.airplanes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>airplanes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.airplaneManufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.airplaneManufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.airplaneType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.airplaneType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateBuilt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateBuilt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.airplaneID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

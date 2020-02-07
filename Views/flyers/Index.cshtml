@@ -1,0 +1,45 @@
+﻿@model IEnumerable<tk848615_MIS4200.Models.flyers>
+
+@{
+    ViewBag.Title = " FlyerIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.flyerFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flyerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.flyerFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flyerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.flyerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.flyerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.flyerID })
+        </td>
+    </tr>
+}
+
+</table>

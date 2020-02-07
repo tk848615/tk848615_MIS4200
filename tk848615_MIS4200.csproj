@@ -168,7 +168,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\airplanesController.cs" />
     <Compile Include="Controllers\customersController.cs" />
+    <Compile Include="Controllers\flightsController.cs" />
+    <Compile Include="Controllers\flyersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
@@ -179,7 +182,10 @@
     </Compile>
     <Compile Include="Migrations\MISContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\airplanes.cs" />
     <Compile Include="Models\customer.cs" />
+    <Compile Include="Models\flights.cs" />
+    <Compile Include="Models\flyers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderDetails.cs" />
@@ -260,6 +266,21 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\flyers\Create.cshtml" />
+    <Content Include="Views\flyers\Delete.cshtml" />
+    <Content Include="Views\flyers\Details.cshtml" />
+    <Content Include="Views\flyers\Edit.cshtml" />
+    <Content Include="Views\flyers\Index.cshtml" />
+    <Content Include="Views\flights\Create.cshtml" />
+    <Content Include="Views\flights\Delete.cshtml" />
+    <Content Include="Views\flights\Details.cshtml" />
+    <Content Include="Views\flights\Edit.cshtml" />
+    <Content Include="Views\flights\Index.cshtml" />
+    <Content Include="Views\airplanes\Create.cshtml" />
+    <Content Include="Views\airplanes\Delete.cshtml" />
+    <Content Include="Views\airplanes\Details.cshtml" />
+    <Content Include="Views\airplanes\Edit.cshtml" />
+    <Content Include="Views\airplanes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
