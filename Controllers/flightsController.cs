@@ -18,7 +18,7 @@ namespace tk848615_MIS4200.Controllers
         // GET: flights
         public ActionResult Index()
         {
-            var flights = db.Flights.Include(f => f.Flyers);
+            var flights = db.Flights.Include(f => f.Airplanes).Include(f => f.Flyers);
             return View(flights.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace tk848615_MIS4200.Controllers
         // GET: flights/Create
         public ActionResult Create()
         {
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer");
             ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName");
             return View();
         }
@@ -49,7 +50,7 @@ namespace tk848615_MIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "flightID,destination,dateOfFlight,flyerID")] flights flights)
+        public ActionResult Create([Bind(Include = "flightID,flightName,destination,dateOfFlight,airplaneID,flyerID")] flights flights)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +59,8 @@ namespace tk848615_MIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "fullName", flights.flyerID);
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
+            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName", flights.flyerID);
             return View(flights);
         }
 
@@ -74,6 +76,7 @@ namespace tk848615_MIS4200.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
             ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName", flights.flyerID);
             return View(flights);
         }
@@ -83,7 +86,7 @@ namespace tk848615_MIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "flightID,destination,dateOfFlight,flyerID")] flights flights)
+        public ActionResult Edit([Bind(Include = "flightID,flightName,destination,dateOfFlight,airplaneID,flyerID")] flights flights)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +94,8 @@ namespace tk848615_MIS4200.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "fullName", flights.flyerID);
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
+            ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName", flights.flyerID);
             return View(flights);
         }
 

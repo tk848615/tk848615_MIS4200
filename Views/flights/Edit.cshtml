@@ -18,6 +18,14 @@
         @Html.HiddenFor(model => model.flightID)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.flightName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.flightName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.flightName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.destination, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.destination, new { htmlAttributes = new { @class = "form-control" } })
@@ -30,6 +38,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.dateOfFlight, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.dateOfFlight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.airplaneID, "airplaneID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("airplaneID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.airplaneID, "", new { @class = "text-danger" })
             </div>
         </div>
 

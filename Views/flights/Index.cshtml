@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<tk848615_MIS4200.Models.flights>
 
 @{
-    ViewBag.Title = "Flight Index";
+    ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
@@ -12,7 +12,13 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Airplanes.airplaneManufacturer)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Flyers.flyerFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flightName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.destination)
@@ -26,7 +32,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Airplanes.airplaneManufacturer)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Flyers.flyerFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flightName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.destination)

@@ -8,7 +8,7 @@ namespace tk848615_MIS4200.Models
 {
     public class flights
     {
-        [Key]
+      [Key]
         public int flightID { get; set; }
 
         public string flightName { get; set; }
