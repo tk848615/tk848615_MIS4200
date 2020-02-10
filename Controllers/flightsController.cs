@@ -59,7 +59,7 @@ namespace tk848615_MIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneName", flights.airplaneID);
             ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "FullName", flights.flyerID);
             return View(flights);
         }
@@ -76,7 +76,7 @@ namespace tk848615_MIS4200.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneName", flights.airplaneID);
             ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "FullName", flights.flyerID);
             return View(flights);
         }
@@ -94,7 +94,7 @@ namespace tk848615_MIS4200.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneManufacturer", flights.airplaneID);
+            ViewBag.airplaneID = new SelectList(db.airplanes, "airplaneID", "airplaneName", flights.airplaneID);
             ViewBag.flyerID = new SelectList(db.Flyers, "flyerID", "flyerFirstName", flights.flyerID);
             return View(flights);
         }
