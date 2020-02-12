@@ -11,9 +11,18 @@ namespace tk848615_MIS4200.Models
 
         [Key]
         public int flyerID { get; set; }
-        
+       
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage ="First Name is Required")]
+        [StringLength(20)]
         public string flyerFirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name is Required")]
+        [StringLength(20)]
         public string flyerLastName { get; set; }
+
+        [Display(Name = "Email")]
         public string email { get; set; }
 
 
