@@ -14,12 +14,12 @@ namespace tk848615_MIS4200.Models
        
         [Display(Name = "First Name")]
         [Required(ErrorMessage ="First Name is Required")]
-        [StringLength(20)]
+        [StringLength(50)]
         public string flyerFirstName { get; set; }
 
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Last Name is Required")]
-        [StringLength(20)]
+        [StringLength(50)]
         public string flyerLastName { get; set; }
 
         [Display(Name = "Email")]

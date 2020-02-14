@@ -24,9 +24,18 @@
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Flyers", "Index", "Flyers")</li>
-                        <li>@Html.ActionLink("Flights", "Index", "Flights")</li>
-                        <li>@Html.ActionLink("Airplanes", "Index", "Airplanes")</li>
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                Dropdown
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <li>@Html.ActionLink("Flyers", "Index", "Flyers")</li>
+                                <li>@Html.ActionLink("Flights", "Index", "Flights")</li>
+                                <li>@Html.ActionLink("Airplanes", "Index", "Airplanes")</li>
+                            </div>
+                        </div>
+                            
 
                     </ul>
                     @Html.Partial("_LoginPartial")
