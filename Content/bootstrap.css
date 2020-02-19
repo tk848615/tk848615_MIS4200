@@ -186,6 +186,7 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+
 }
 td,
 th {
@@ -253,6 +254,7 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+    color: pink;
   }
   .table td,
   .table th {
@@ -261,6 +263,7 @@ th {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+
   }
 }
 @font-face {
